@@ -9,14 +9,14 @@ export default function Buy() {
     const { data, isLoading } = useNFTs(contract);
 
     return (
-        <Container maxW={"1200px"} p={5}>
-            <Heading>Buy NFTs</Heading>
-            <Text>Browse and buy NFTs from this collection.</Text>
+        <div>
+            <h1>Buy NFTs</h1>
+            <p>Browse and buy NFTs from this collection.</p>
             <NFTGrid 
                 isLoading={isLoading} 
                 data={data} 
                 emptyText={"No NFTs found"}
             />
-        </Container>
+        </div>
     )
 };
