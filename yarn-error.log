@@ -1,0 +1,62 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\conta\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\conta\AppData\Local\npm-cache\_npx\8d2f9c029655e602\node_modules\.bin;C:\Users\conta\node_modules\.bin;C:\Users\node_modules\.bin;C:\node_modules\.bin;C:\Users\conta\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\conta\AppData\Roaming\nvm;C:\Users\conta\AppData\Local\Microsoft\WindowsApps;C:\Users\conta\AppData\Local\GitHubDesktop\bin;C:\Users\conta\AppData\Roaming\nvm;C:\Users\conta\AppData\Local\Programs\Microsoft VS Co;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MongoDB\Server\6.0\bin;C:\Program Files\Git LFS;C:\Program Files\Docker\Docker\resources\bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\conta\.cargo\bin;C:\Users\conta\.pyenv\pyenv-win\bin;C:\Users\conta\.pyenv\pyenv-win\shims;C:\Users\conta\AppData\Local\Microsoft\WindowsApps;C:\Users\conta\AppData\Roaming\nvm;C:\Users\conta\go\bin;C:\Users\conta\.dotnet\tools;C:\Users\conta\AppData\Local\atom\bin;G:\Users\david\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\conta\AppData\Roaming\npm;C:\Users\conta\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.18.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@react-icons/all-files/-/all-files-4.1.0.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\conta\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:631:28)
+      at ClientRequest.emit (node:events:517:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:847:9)
+      at Object.onceWrapper (node:events:631:28)
+      at TLSSocket.emit (node:events:529:35)
+      at Socket._onTimeout (node:net:598:8)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+
+npm manifest: 
+  {
+    "name": "coolmart",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "export": "next export",
+      "deploy": "next build && next export && npx thirdweb@latest upload out"
+    },
+    "dependencies": {
+      "@thirdweb-dev/react": "^4",
+      "@thirdweb-dev/sdk": "^4",
+      "ethers": "^5",
+      "next": "^13",
+      "react": "^18.2",
+      "react-dom": "^18.2"
+    },
+    "devDependencies": {
+      "@types/node": "^18.11.11",
+      "@types/react": "^18",
+      "eslint": "^8.29.0",
+      "eslint-config-next": "^13",
+      "typescript": "^4.9.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
