@@ -19,11 +19,9 @@ export default function NFTGrid({
     emptyText = "No NFTs found",
 }: Props) {
     return (
-        <SimpleGrid columns={4} spacing={6} w={"100%"} padding={2.5} my={5}>
+        <div>
             {isLoading ? (
-                [...Array(20)].map((_, index) => (
-                    <Skeleton key={index} height={"312px"} width={"100%"} />
-                ))
+		            <p>Loading...</p>
             ) : data && data.length > 0 ? (
                 data.map((nft) => 
                     !overrideOnclickBehavior ? (
@@ -31,7 +29,7 @@ export default function NFTGrid({
                             href={`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`}
                             key={nft.metadata.id}
                         >
-                        <NFT nft={nft} />
+	                        <NFT nft={nft} />
                         </Link>
                     ) : (
                         <div
@@ -42,9 +40,9 @@ export default function NFTGrid({
                         </div>
                     ))
             ) : (
-                <Text>{emptyText}</Text>
+                <p>{emptyText}</p>
             )}
-        </SimpleGrid>
+        </div>
         
     )
 };
