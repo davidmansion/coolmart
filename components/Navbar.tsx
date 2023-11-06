@@ -6,28 +6,28 @@ export function Navbar() {
     const address = useAddress();
 
     return (
-        <Box maxW={"1200px"} m={"auto"} py={"10px"}px={"40px"}>
-            <Flex justifyContent={"space-between"} alignItems={"center"}>
-                <Link as={NextLink} href='/'>
-                    <Heading>Marketplace</Heading>
+        <div>
+            <div>
+                <Link href='/'>
+                    <p>Marketplace</p>
                 </Link>
-                <Flex direction={"row"}>
-                    <Link as={NextLink} href='/buy' mx={2.5}>
-                        <Text>Buy</Text>
+                <div>
+                    <Link href='/buy'>
+                        <p>Buy</p>
                     </Link>
-                    <Link as={NextLink} href='/sell' mx={2.5}>
-                        <Text>Sell</Text>
+                    <Link href='/sell'>
+                        <p>Sell</p>
                     </Link>
-                </Flex>
-                <Flex dir={"row"} alignItems={"center"}>
+                </div>
+                <div>
                     <ConnectWallet/>
                     {address && (
-                        <Link as={NextLink} href={`/profile/${address}`}>
-                            <Avatar src='https://bit.ly/broken-link' ml={"20px"}/>
+                        <Link href={`/profile/${address}`}>
+                            {/* Image of avatar */}
                         </Link>
                     )}
-                </Flex>
-            </Flex>
-        </Box>
+                </div>
+            </div>
+        </div>
     )
 };
