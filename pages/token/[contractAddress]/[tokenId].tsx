@@ -39,48 +39,48 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
         });
 
     async function buyListing() {
-        let txResult;
+  let txResult;
 
-        //Add for auction section
-        if (auctionListing?.[0]) {
-            txResult = await marketplace?.englishAuctions.buyoutAuction(
-                auctionListing[0].id
-            );
-        } else if (directListing?.[0]){
-            txResult = await marketplace?.directListings.buyFromListing(
-                directListing[0].id,
-                1
-            );
-        } else {
-            throw new Error("No listing found");
-        }
+  //Add for auction section
+  if (auctionListing?.[0]) {
+      txResult = await marketplace?.englishAuctions.buyoutAuction(
+          auctionListing[0].id
+      );
+  } else if (directListing?.[0]){
+      txResult = await marketplace?.directListings.buyFromListing(
+          directListing[0].id,
+          1
+      );
+  } else {
+      throw new Error("No listing found");
+  }
 
-        return txResult;
-    }
+  return txResult;
+}
 
     
     async function createBidOffer() {
-        let txResult;
-        if(!bidValue) {
-            return;
-        }
+  let txResult;
+  if(!bidValue) {
+      return;
+  }
 
-        if (auctionListing?.[0]) {
-            txResult = await marketplace?.englishAuctions.makeBid(
-                auctionListing[0].id,
-                bidValue
-            );
-        } else if (directListing?.[0]){
-            txResult = await marketplace?.offers.makeOffer({
-                assetContractAddress: NFT_COLLECTION_ADDRESS,
-                tokenId: nft.metadata.id,
-                totalPrice: bidValue,
-            })
-        } else {
-            throw new Error("No listing found");
-        }
-        return txResult;
-    }
+  if (auctionListing?.[0]) {
+      txResult = await marketplace?.englishAuctions.makeBid(
+          auctionListing[0].id,
+          bidValue
+      );
+  } else if (directListing?.[0]){
+      txResult = await marketplace?.offers.makeOffer({
+          assetContractAddress: NFT_COLLECTION_ADDRESS,
+          tokenId: nft.metadata.id,
+          totalPrice: bidValue,
+      })
+  } else {
+      throw new Error("No listing found");
+  }
+  return txResult;
+}
     
     return (
         <Container maxW={"1200px"} p={5} my={5}>
